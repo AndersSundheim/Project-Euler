@@ -21,4 +21,12 @@ Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
 @author: Anders
 '''
 
-#https://oeis.org/A051626/b051626.txt
+max = 0
+for i in range(3,1000):
+    if i%2!=0 and i%5!=0 and i%10!=0:
+        x = 1
+        while (10**x)%i!=1:
+            x+=1
+        if x>max:
+            max = x
+print(max+1)
